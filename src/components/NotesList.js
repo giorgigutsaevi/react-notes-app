@@ -10,6 +10,7 @@ const NotesList = (props) => {
 					id={note.id}
 					text={note.text}
 					date={note.date}
+					handleDeleteNote={props.handleDeleteNote}
 				/>
 				))}
 				<AddNote

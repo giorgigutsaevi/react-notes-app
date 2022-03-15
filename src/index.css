@@ -34,6 +34,7 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  white-space: pre-wrap;
 }
 
 .note-footer{
@@ -62,5 +63,9 @@ textarea{
 
 .save:hover{
   background-color: #ededed;
+  cursor: pointer;
+}
+
+.delete-icon{
   cursor: pointer;
 }

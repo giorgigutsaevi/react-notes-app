@@ -13,11 +13,6 @@ const App = () => {
       id: nanoid(),
       text: "Sample note text",
       date: date,
-    },
-    {
-      id: nanoid(),
-      text: "Sample note text",
-      date: date,
     }
   ]);
 
@@ -32,12 +27,18 @@ const App = () => {
     const newNotes = [...notes, newNote];
     setNotes(newNotes);
   }
+
+  const deleteNote = (id) => {
+    const newNotes = notes.filter((note) => note.id !== id);
+    setNotes(newNotes);
+  }
  
   return (
     <div className='container'>
       <NotesList
         notes={notes}
         handleAddNote={toAddNote}
+        handleDeleteNote={deleteNote}
       />
     </div>
   )
