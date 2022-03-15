@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { nanoid } from 'nanoid'
 import NotesList from "./components/NotesList";
 import Search from "./components/Search";
-import Header from  "./components/Header"
+import Header from "./components/Header"
 
 const App = () => {
 
@@ -26,7 +26,7 @@ const App = () => {
       text: text,
       date: date.toLocaleDateString()
     };
-    
+
     const newNotes = [...notes, newNote];
     setNotes(newNotes);
   }
@@ -39,17 +39,28 @@ const App = () => {
   const [darkMode, setDarkMode] = useState(false)
   const handleDarkMode = () => {
     setDarkMode(prevMode => !prevMode)
-    
+
   }
 
+  useEffect(() => {
+    const savedNotes = JSON.parse(localStorage.getItem('react-notes-data'))
+    if(savedNotes){
+      setNotes(savedNotes)
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('react-notes-data', JSON.stringify(notes));
+  }, [notes])
+
   return (
-    <div className={ darkMode ? "dark-mode" : ""}>
+    <div className={darkMode ? "dark-mode" : ""}>
       <div className='container'>
-        <Header 
+        <Header
           darkMode={darkMode}
           handleDarkMode={handleDarkMode}
         />
-        <Search 
+        <Search
           handleSearchNote={setSearchText}
         />
         <NotesList
