@@ -25,3 +25,4 @@ You may also see any lint errors in the console.
 
 
 ### App Usage & Design
+![App](/src/images/react-notes-app.gif)
