@@ -36,17 +36,28 @@ const App = () => {
     setNotes(newNotes);
   }
 
+  const [darkMode, setDarkMode] = useState(false)
+  const handleDarkMode = () => {
+    setDarkMode(prevMode => !prevMode)
+    
+  }
+
   return (
-    <div className='container'>
-      <Header />
-      <Search 
-        handleSearchNote={setSearchText}
-      />
-      <NotesList
-        notes={notes.filter((note) => note.text.toLocaleLowerCase().includes(searchText))}
-        handleAddNote={toAddNote}
-        handleDeleteNote={deleteNote}
-      />
+    <div className={ darkMode ? "dark-mode" : ""}>
+      <div className='container'>
+        <Header 
+          darkMode={darkMode}
+          handleDarkMode={handleDarkMode}
+        />
+        <Search 
+          handleSearchNote={setSearchText}
+        />
+        <NotesList
+          notes={notes.filter((note) => note.text.toLocaleLowerCase().includes(searchText))}
+          handleAddNote={toAddNote}
+          handleDeleteNote={deleteNote}
+        />
+      </div>
     </div>
   )
 }
