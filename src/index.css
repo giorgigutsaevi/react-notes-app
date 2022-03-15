@@ -89,3 +89,35 @@ textarea{
 .search input:focus{
   outline: none;
 }
+
+/* Header styles below */
+
+.notes-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-wrapper{
+  display: flex;
+  align-items: center;
+}
+
+.app-logo{
+  width: 50px;
+  margin-right: 0.7rem;
+}
+
+.toggle-mode-button{
+  background-color:  #e1e1e1;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-weight: bolder;
+}
+
+.toggle-mode-button:hover{
+  background-color: #424040;
+  cursor: pointer;
+  color: snow;
+}
