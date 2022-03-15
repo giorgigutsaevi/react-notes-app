@@ -15,7 +15,9 @@ const App = () => {
 
   return (
   <div className='container'>
-    <NotesList />
+    <NotesList 
+      notes={notes}
+    />
   </div>
   )
 }
