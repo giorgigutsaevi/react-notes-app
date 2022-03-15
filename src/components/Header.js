@@ -11,7 +11,7 @@ const Header = (props) => {
 				className='toggle-mode-button'
 				onClick={props.handleDarkMode}
 				>
-					Dark Mode
+					{props.darkMode ? "Light Mode" : "Dark Mode"}
 			</button>
 		</div>
 	)
