@@ -8,7 +8,10 @@ const AddNote = (props) => {
 	}
 
 	const handleClick = () => {
-		props.handleAddNote(noteText)
+		if(noteText.trim().length > 0){
+			props.handleAddNote(noteText);
+			setNoteText("");
+		}
 	}
 
 	return (
