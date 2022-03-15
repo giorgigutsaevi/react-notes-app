@@ -1,6 +1,6 @@
 # This is my React-based Notes App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).\
 The design and aesthetic feel of this project is inspired by iOS native Notes app. 
 
 ## Project Overview
