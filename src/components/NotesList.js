@@ -1,6 +1,10 @@
+import Note from "./Note";
+
 const NotesList = () => {
 	return(
-		<div className="notes-list"></div>
+		<div className="notes-list">
+			<Note />
+		</div>
 	)
 }
 
