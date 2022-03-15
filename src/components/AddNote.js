@@ -1,10 +1,14 @@
 import { useState } from "react";
 
-const AddNote = () => {
+const AddNote = (props) => {
 	const [noteText, setNoteText] = useState("");
 
 	const handleChange = (evt) => {
 		setNoteText(evt.target.value);
+	}
+
+	const handleClick = () => {
+		props.handleAddNote(noteText)
 	}
 
 	return (
@@ -19,7 +23,7 @@ const AddNote = () => {
 			</textarea>
 			<div className='note-footer'>
 				<small>200 Remaining</small>
-				<button className='save'>Save Note</button>
+				<button className='save' onClick={handleClick}>Save Note</button>
 			</div>
 		</div>
 	)

@@ -12,7 +12,9 @@ const NotesList = (props) => {
 					date={note.date}
 				/>
 				))}
-				<AddNote/>
+				<AddNote
+					handleAddNote={props.handleAddNote}
+				/>
 		</div>
 	)
 }
